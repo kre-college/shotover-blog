@@ -1,0 +1,53 @@
+<template>
+  <div class="footer f-left w-100 pb-5 mt-7">
+    <div class="copyright-section w-85 f-left">
+      <a href="/" class="mb-3">
+        <span>{{ title }}</span>
+        <img :src="logo">
+      </a>
+
+      <div class="f-left w-100">
+        <p class="copyright">{{ copyrightMessages.m1 }}</p>
+        <p class="copyright mb-1">{{ copyrightMessages.m2 }}</p>
+        <p class="copyright">{{ copyrightMessages.m3 }}</p>
+      </div>
+    </div>
+
+    <nav class="footer-nav w-15 f-left">
+      <a
+        v-for="nav in navItems" :key="nav.text"
+        :href="nav.link"
+        :target="nav.link.includes('https://') ? '_blank' : ''"
+        :rel="nav.link.includes('https://') ? 'noreferrer' : ''"
+        class="footer-link"
+      >
+        {{ nav.text }}
+      </a>
+    </nav>
+  </div>
+</template>
+
+<script>
+import { ref } from 'vue'
+
+export default {
+  data () {
+    return {
+      logo: '',
+      title: '',
+      navItems: [],
+      copyrightMessages: []
+    }
+  },
+
+  mounted () {
+    import('../config').then(config => {
+      this.logo = ref(config.default.themeConfig.logo)
+      this.title = config.default.title
+
+      this.navItems = config.default.footerConfig.nav
+      this.copyrightMessages = config.default.footerConfig.copyrightMessages
+    })
+  }
+}
+</script>
