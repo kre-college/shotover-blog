@@ -103,15 +103,69 @@ export default {
       roadmap: {
         title: 'Roadmap',
         items: [
-          'Support relevant xDS APIs (so Shotover can play nicely with service mesh implementations)',
-          'Support hot-reloads and a dynamic configuration API.',
-          'Additional sources (DynamoDB and PostgreSQL are good first candidates).',
-          'Add support for rate limiting, explicit back-pressure mechanisms, etc.',
-          'Additional Distributed algorithm transform primitives (e.g RAFT, 2PC, etc).',
-          'Additional sink transforms (these generally get implemented alongside sources).',
-          'Support user-defined / generated sources (e.g. thrift or a gRPC service from a proto definition).',
-          'Simulation testing once tokio-rs/simulation reaches compatibility with tokio-2.0',
-          'Zero-copy pass-through transforms and in-place query editing (performance).'
+          {
+            text: 'Support relevant xDS APIs (so Shotover can play nicely with service mesh implementations)',
+            linePosition: 'bottom',
+            height: 150,
+            top: 134,
+            left: 130
+          },
+          {
+            text: 'Support hot-reloads and a dynamic configuration API.',
+            linePosition: 'bottom',
+            height: 130,
+            top: 260,
+            left: 460
+          },
+          {
+            text: 'Additional sources (DynamoDB and PostgreSQL are good first candidates).',
+            linePosition: 'bottom',
+            height: 140,
+            top: 75,
+            left: 790
+          },
+          {
+            text: 'Add support for rate limiting, explicit back-pressure mechanisms, etc.',
+            linePosition: 'bottom',
+            height: 100,
+            top: 225,
+            left: 1100
+          },
+          {
+            text: 'Additional Distributed algorithm transform primitives (e.g RAFT, 2PC, etc).',
+            linePosition: 'bottom',
+            height: 140,
+            top: 40,
+            left: 1430
+          },
+          {
+            text: 'Additional sink transforms (these generally get implemented alongside sources).',
+            linePosition: 'top',
+            height: 165,
+            top: 233,
+            left: 1600
+          },
+          {
+            text: 'Support user-defined / generated sources (e.g. thrift or a gRPC service from a proto definition).',
+            linePosition: 'bottom',
+            height: 90,
+            top: 208,
+            left: 1860
+          },
+          {
+            text: 'Simulation testing once tokio-rs/simulation reaches compatibility with tokio-2.0',
+            linePosition: 'bottom',
+            height: 100,
+            top: 28,
+            left: 2220
+          },
+          {
+            text: 'Zero-copy pass-through transforms and in-place query editing (performance).',
+            linePosition: 'top',
+            height: 165,
+            top: 215,
+            left: 2415
+          }
         ]
       },
 

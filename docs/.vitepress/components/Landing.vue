@@ -1,5 +1,5 @@
 <template>
-  <div class="landing w-100 f-left" v-if="config.title">
+  <div class="landing w-100 f-left" v-if="config.title" @wheel="onScroll($event)">
     <div class="w-100 f-left mb-18">
       <div class="w-55 f-left mt-5 pl-130">
         <h1 class="shotover-title w-100 f-left">{{ config.title }}</h1>
@@ -50,7 +50,8 @@
     </div>
 
     <div class="w-100 f-left p-130 landing-problems">
-      <h2 class="landing-problems-title" v-html="config.problemsSection.title"></h2>
+      <h2 class="landing-problems-title mb-6" v-html="config.problemsSection.title"></h2>
+
       <p class="w-65 mb-8 problems-description">
         {{ config.problemsSection.description1 }}
       </p>
@@ -92,13 +93,85 @@
       <div class="proxy-item" style="top: 535px; right: -120px">pscale connect</div>
     </div>
 
+    <div class="w-100 f-left mb-24 p-130 landing-deploy">
+      <div class="w-40 f-left">
+        <h2 class="landing-title mb-4">
+          {{ config.deploying.title }}
+        </h2>
+
+        <p class="landing-description mb-11">
+          {{ config.deploying.description }}
+        </p>
+      </div>
+
+      <div class="w-100 f-left">
+        <div class="w-45 f-left">
+          <p class="deploy-counter mb-8">
+            {{
+              `${selectedDeployOption < 9 ? `0${selectedDeployOption + 1}` : selectedDeployOption + 1}
+              —
+              ${config.deploying.steps.length < 10 ? `0${config.deploying.steps.length}` : config.deploying.steps.length}`
+            }}
+          </p>
+
+          <h3
+            v-for="(step, id) in config.deploying.steps" :key="id"
+            @mouseover="selectedDeployOption = id"
+            :class="{'active': selectedDeployOption === id}"
+            class="deploy-step mb-3"
+          >
+            {{ step.name }}
+            <img v-if="selectedDeployOption === id" class="f-right deploy-arrow" src="/landing/ArrowRightBlack.png">
+          </h3>
+        </div>
+
+        <div class="w-55 f-left p-50">
+          <div class="step-img-container mb-4">
+            <img class="step-img" :src="config.deploying.steps[selectedDeployOption].image">
+          </div>
+
+          <p class="landing-description w-80">
+            {{ config.deploying.steps[selectedDeployOption].description }}
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="w-100 f-left mb-18">
+      <div class="p-130">
+        <h2 class="landing-title w-100 f-left mb-2">
+          {{ config.roadmap.title }}
+        </h2>
+      </div>
+
+      <div class="w-100 f-left roadmap-container" ref="roadmapContainer">
+        <div class="roadmap">
+          <img src="/landing/roadmap.png">
+
+          <div
+            v-for="step, id in config.roadmap.items" :key="id"
+            class="roadmap-step"
+            :style="`top: ${step.top}px; left: ${step.left}px;`"
+          >
+            <div v-if="step.linePosition === 'top'" class="roadmap-step-pointer-line" :style="`height: ${step.height}px;`"></div>
+            <div class="roadmap-step-pointer">{{ id < 9 ? `0${id + 1}` : id + 1 }}</div>
+            <div v-if="step.linePosition === 'bottom'" class="roadmap-step-pointer-line" :style="`height: ${step.height}px;`"></div>
+
+            <p class="landing-description pointer-text" :style="step.linePosition === 'top' ? `margin-top:${step.height}px` : ''">
+              {{ step.text }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="name-description w-100 f-left">
       <div class="p-130">
         <h2 class="landing-title w-50 f-left">
           {{ config.name.title }}
         </h2>
 
-        <p class="landing-description w-50 f-left">
+        <p class="landing-description w-50 mt-1 mb-1 f-left">
           {{ config.name.description }}
         </p>
       </div>
@@ -112,7 +185,8 @@
 export default {
   data () {
     return {
-      config: {}
+      config: {},
+      selectedDeployOption: 0
     }
   },
 
@@ -120,6 +194,30 @@ export default {
     import('../config').then(config => {
       this.config = config.default.pagesConfig.landing
     })
+  },
+
+  methods : {
+    onScroll (event) {
+      const c = this.$refs.roadmapContainer
+
+      if (
+        event.deltaY > 0
+          ? (event.view.pageYOffset + event.deltaY >= 5640 && event.view.pageYOffset - event.deltaY <= 5660)
+          : (event.view.pageYOffset - event.deltaY >= 5640 && event.view.pageYOffset + event.deltaY <= 5660)
+      ) {
+        if (
+          (c.scrollLeft + window.innerWidth === 2900 && event.deltaY > 0) || 
+          (c.scrollLeft === 0 && event.deltaY <= 0)
+        ) {
+          document.getElementsByTagName('body')[0].classList.remove("no-scroll-y")
+          return
+        }
+
+        document.getElementsByTagName('body')[0].classList.add("no-scroll-y")
+        c.scrollLeft += event.deltaY
+        event.preventDefault()
+      }
+    }
   }
 }
 </script>
