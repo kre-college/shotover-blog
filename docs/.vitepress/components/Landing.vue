@@ -121,7 +121,7 @@
             class="deploy-step mb-3"
           >
             {{ step.name }}
-            <img v-if="selectedDeployOption === id" class="f-right deploy-arrow" src="/landing/ArrowRightBlack.png">
+            <img v-if="selectedDeployOption === id" class="f-right deploy-arrow" src="/landing/arrowRightBlack.png">
           </h3>
         </div>
 
