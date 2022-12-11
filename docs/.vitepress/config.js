@@ -3,6 +3,7 @@ import { ref } from 'vue'
 export default {
   title: 'Shotover',
   description: 'Shotover Description',
+  base: 'https://github.com/kre-college/shotover-blog',
 
   themeConfig: {
     logo: '/logo.png',
