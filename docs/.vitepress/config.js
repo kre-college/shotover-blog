@@ -18,7 +18,7 @@ export default {
   pagesConfig: {
     landing: {
       title: 'Shotover',
-      titleImg: ref('/landing/titleImage.png'),
+      titleImg: ref('/landing/title_image.png'),
       subtitle1: 'Proxy server.',
       subtitle2: 'Making your life easier.',
       motto: 'Controlling. Managing. Modyfiying.',
@@ -179,7 +179,7 @@ export default {
 
     contacts: {
       image: ref('/contacts.png'),
-      titleImage: ref('/titleImage.png'),
+      titleImage: ref('/title_image.png'),
       imageMsg: 'For general questions ask a member of our team, who will be happy to help!',
 
       enquiries: [
