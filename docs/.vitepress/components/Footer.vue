@@ -1,7 +1,7 @@
 <template>
   <div class="footer f-left w-100 pb-5 mt-7" v-if="base">
     <div class="copyright-section w-85 f-left">
-      <a href="/" class="mb-3">
+      <a :href="base('/')" class="mb-3">
         <span>{{ title }}</span>
         <img :src="base(logo)">
       </a>
@@ -16,7 +16,7 @@
     <nav class="footer-nav w-15 f-left">
       <a
         v-for="nav in navItems" :key="nav.text"
-        :href="nav.link"
+        :href="base(nav.link)"
         :target="nav.link.includes('https://') ? '_blank' : ''"
         :rel="nav.link.includes('https://') ? 'noreferrer' : ''"
         class="footer-link"

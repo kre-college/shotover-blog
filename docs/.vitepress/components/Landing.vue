@@ -9,7 +9,7 @@
 
         <h3 class="shotover-motto w-100 f-left">{{ config.motto }}</h3>
         
-        <a class="landing-action-btn" :href="config.actionBtnLink">
+        <a class="landing-action-btn" :href="base(config.actionBtnLink)">
           <span class="landing-action-btn-text">{{ config.actionBtnText }}</span>
         </a>
       </div>
@@ -37,7 +37,7 @@
       <h2 class="landing-docs-title pl-130" v-html="config.documentation.title"></h2>
 
       <div class="docs-container w-100 f-left p-105">
-        <a v-for="doc in config.documentation.items" :key="doc.link" :href="doc.link" class="docs-block">
+        <a v-for="doc in config.documentation.items" :key="doc.link" :href="base(doc.link)" class="docs-block">
           <h3 class="w-100 f-left doc-name mb-2">{{ doc.name }}</h3>
           <p class="text-left doc-desc">{{ doc.description }}</p>
 
