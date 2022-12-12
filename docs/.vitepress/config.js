@@ -18,7 +18,7 @@ export default {
   pagesConfig: {
     landing: {
       title: 'Shotover',
-      titleImg: ref('/shotover-blog/landing/title_image.png'),
+      titleImg: ref('/landing/title_image.png'),
       subtitle1: 'Proxy server.',
       subtitle2: 'Making your life easier.',
       motto: 'Controlling. Managing. Modyfiying.',
@@ -64,12 +64,12 @@ export default {
           {
             description: 'Dual writing and/or query translation to allow the underlying storage technology to be changed ',
             color: '#56BCED',
-            image: ref('/shotover-blog/landing/image1.png')
+            image: ref('/landing/image1.png')
           },
           {
             description: 'Adding auditing, encryption or other security measures',
             color: '#88d9ff',
-            image: ref('/shotover-blog/landing/image2.png')
+            image: ref('/landing/image2.png')
           },
           {
             description: 'As an alternative to Change Data Capture technology to send writes to a message stream such as Apache Kafka',
@@ -85,17 +85,17 @@ export default {
         steps: [
           {
             name: 'Application sidecar',
-            image: ref('/shotover-blog/landing/deploy1.png'),
+            image: ref('/landing/deploy1.png'),
             description: 'Shotover is pretty lightweight, so feel free to deploy it as a sidecar to each of your application instances.'
           },
           {
             name: 'Stand alone proxy',
-            image: ref('/shotover-blog/landing/deploy2.png'),
+            image: ref('/landing/deploy2.png'),
             description: 'If you are building a Service/DBaaS/Common data layer, you can deploy Shotover on standalone hardware and really let it fly.'
           },
           {
             name: 'Sidecar to your database',
-            image: ref('/shotover-blog/landing/deploy3.png'),
+            image: ref('/landing/deploy3.png'),
             description: 'You can also stick Shotover on the same instance/server as your database is running on, we do it, so we won\'t judge you.'
           }
         ]
@@ -172,14 +172,14 @@ export default {
 
       name: {
         title: 'Name',
-        image: ref('/shotover-blog/landing/river.png'),
+        image: ref('/landing/river.png'),
         description: 'Shotover refers to the Shotover (Kimi-ākau) river in Otago, New Zealand - close to Queenstown and eventually flowing into Lake Wakatipu via the Kawarau River, it\'s famous for white water rafting, bungy-jumping, fast rapids and jet boating.'
       }
     },
 
     contacts: {
-      image: ref('/shotover-blog/contacts.png'),
-      titleImage: ref('/shotover-blog/title_image.png'),
+      image: ref('/contacts.png'),
+      titleImage: ref('/title_image.png'),
       imageMsg: 'For general questions ask a member of our team, who will be happy to help!',
 
       enquiries: [
