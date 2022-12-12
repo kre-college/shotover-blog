@@ -5,6 +5,10 @@ export default {
   description: 'Shotover Description',
   base: '/shotover-blog/',
 
+  head: [
+    ['link', { rel: 'icon', type: 'image/x-icon', href: '/shotover-blog/favicon.ico' }]
+  ],
+
   themeConfig: {
     logo: '/logo.png',
     nav: [
