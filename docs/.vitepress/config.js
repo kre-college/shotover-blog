@@ -262,7 +262,7 @@ export default {
       { text: 'Github', link: 'https://github.com/shotover/shotover-proxy' },
       { text: 'Introduction', link: '/docs/user-guide/introduction' },
       { text: 'Concepts', link: '/docs/user-guide/concepts' },
-      { text: 'Roadmap', link: '/roadmap' },
+      { text: 'Roadmap', link: '/#roadmap' },
       { text: 'Contacts', link: '/contacts' }
     ],
 
