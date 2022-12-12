@@ -1,5 +1,5 @@
 <template>
-  <div class="landing w-100 f-left" v-if="config.title" @wheel="onScroll($event)">
+  <div class="landing w-100 f-left" v-if="config.title && base" @wheel="onScroll($event)">
     <div class="w-100 f-left mb-18">
       <div class="w-55 f-left mt-5 pl-130">
         <h1 class="shotover-title w-100 f-left">{{ config.title }}</h1>
@@ -15,7 +15,7 @@
       </div>
 
       <div class="w-45 f-left landing-title-img">
-        <img class="w-80 ml-20" :src="config.titleImg">
+        <img class="w-80 ml-20" :src="base(config.titleImg)">
       </div>
     </div>
 
@@ -43,7 +43,7 @@
 
           <div class="f-left doc-action-btn mb-2">
             <p class="f-left">Learn more</p>
-            <img class="f-left doc-arrow" src="/shotover-blog/landing/arrow_right.png">
+            <img class="f-left doc-arrow" :src="base('/landing/arrow_right.png')">
           </div>
         </a>
       </div>
@@ -64,7 +64,7 @@
           :style="`background-color: ${problem.color}; ${id === 2 ? 'margin-top: -150px' : ''}`"
         >
           <span class="f-left w-80">{{ problem.description }}</span>
-          <img class="f-right problem-img" v-if="problem.image" :src="problem.image">
+          <img class="f-right problem-img" v-if="problem.image" :src="base(problem.image)">
         </div>
       </div>
 
@@ -121,7 +121,7 @@
             class="deploy-step mb-3"
           >
             {{ step.name }}
-            <img v-if="selectedDeployOption === id" class="f-right deploy-arrow" src="/shotover-blog/landing/arrow_right_black.png">
+            <img v-if="selectedDeployOption === id" class="f-right deploy-arrow" :src="base('/landing/arrow_right_black.png')">
           </h3>
         </div>
 
@@ -146,7 +146,7 @@
 
       <div class="w-100 f-left roadmap-container" ref="roadmapContainer">
         <div class="roadmap">
-          <img src="/shotover-blog/landing/roadmap.png">
+          <img :src="base('/landing/roadmap.png')">
 
           <div
             v-for="step, id in config.roadmap.items" :key="id"
@@ -176,21 +176,26 @@
         </p>
       </div>
 
-      <img :src="config.name.image">
+      <img :src="base(config.name.image)">
     </div>
   </div>
 </template>
 
 <script>
+import { withBase } from 'vitepress'
+
 export default {
   data () {
     return {
       config: {},
-      selectedDeployOption: 0
+      selectedDeployOption: 0,
+      base: null
     }
   },
 
   mounted () {
+    this.base = withBase
+
     import('../config').then(config => {
       this.config = config.default.pagesConfig.landing
     })

@@ -1,7 +1,7 @@
 <template>
-  <div class="contacts w-100 mt-5" v-if="config.imageMsg">
+  <div class="contacts w-100 mt-5" v-if="config.imageMsg && base">
     <div class="w-60 f-left">
-      <img :src="config.titleImage" class="contacts-title">
+      <img :src="base(config.titleImage)" class="contacts-title">
 
       <div
         v-for="enquiries in config.enquiries" :key="enquiries.email"
@@ -23,20 +23,25 @@
     <div class="w-40 f-left">
       <h3 class="img-msg">{{ config.imageMsg }}</h3>
 
-      <img :src="config.image" class="contacts-img">
+      <img :src="base(config.image)" class="contacts-img">
     </div>
   </div>
 </template>
 
 <script>
+import { withBase } from 'vitepress'
+
 export default {
   data () {
     return {
+      base: null,
       config: {}
     }
   },
 
   mounted () {
+    this.base = withBase
+
     import('../config').then(config => {
       this.config = config.default.pagesConfig.contacts
     })
