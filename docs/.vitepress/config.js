@@ -1,6 +1,7 @@
 import { ref } from 'vue'
 
 export default {
+  lang: 'en-US',
   title: 'Shotover',
   description: 'Shotover Description',
   base: '/shotover-blog/',
@@ -11,11 +12,62 @@ export default {
 
   themeConfig: {
     logo: '/logo.png',
+
+    markdown: {
+      lineNumbers: false
+    },
+
     nav: [
-      { text: 'Docs', link: '/docs/' },
+      { text: 'Docs', link: '/docs/user-guide/introduction' },
       { text: 'Blog', link: '/blog/' },
       { text: 'Github', link: 'https://github.com/shotover/shotover-proxy' },
       { text: 'Contacts', link: '/contacts' }
+    ],
+
+    sidebar: [
+      {
+        text: 'User Guide',
+        items: [
+          { text: 'Introduction', link: '/docs/user-guide/introduction' },
+          { text: 'Getting Started', link: '/docs/user-guide/getting-started' },
+          { text: 'Concepts', link: '/docs/user-guide/concepts' },
+          { text: 'Configuration', link: '/docs/user-guide/configuration' },
+          { text: 'Observability', link: '/docs/user-guide/observability' }
+        ]
+      },
+      {
+        items: [
+          { text: 'Source Types', link: '/docs/source-types' }
+        ]
+      },
+      {
+        items: [
+          { text: 'Transforms', link: '/docs/transforms' }
+        ]
+      },
+      {
+        text: 'Examples',
+        items: [
+          {
+            text: 'Redis Cluster',
+            items: [
+              { text: 'Unaware client', link: '/docs/examples/redis-clustering-unaware' },
+              { text: 'Aware client', link: '/docs/examples/redis-clustering-aware' }
+            ]
+          },
+          {
+            text: 'Cassandra Cluster',
+            items: [
+              { text: 'Shotover sidecars', link: '/docs/examples/cassandra-cluster-shotover-sidecar' }
+            ]
+          }
+        ]
+      },
+      {
+        items: [
+          { text: 'Contributing', link: '/docs/contributing' }
+        ]
+      }
     ]
   },
 
@@ -27,7 +79,7 @@ export default {
       subtitle2: 'Making your life easier.',
       motto: 'Controlling. Managing. Modyfiying.',
       actionBtnText: 'Get started',
-      actionBtnLink: '/docs/getting-started',
+      actionBtnLink: '/docs/user-guide/getting-started',
 
       description: {
         title: 'What is Shotover?',
@@ -40,17 +92,17 @@ export default {
           {
             name: 'Introduction',
             description: 'For more information on what Shotover Proxy is, why it exists and some of the underlying philosophies behind it.',
-            link: '/introduction'
+            link: '/docs/user-guide/introduction'
           },
           {
             name: 'Getting started',
             description: 'For details on how to jump straight in and get up running.',
-            link: '/docs/getting-started'
+            link: '/docs/user-guide/getting-started'
           },
           {
             name: 'Concepts',
             description: 'For a deeper dive into some of the fundamental Shotover concepts.',
-            link: '/concepts'
+            link: '/docs/user-guide/concepts'
           }
         ]
       },
@@ -208,8 +260,8 @@ export default {
   footerConfig: {
     nav: [
       { text: 'Github', link: 'https://github.com/shotover/shotover-proxy' },
-      { text: 'Introduction', link: '/introduction' },
-      { text: 'Concepts', link: '/concepts' },
+      { text: 'Introduction', link: '/docs/user-guide/introduction' },
+      { text: 'Concepts', link: '/docs/user-guide/concepts' },
       { text: 'Roadmap', link: '/roadmap' },
       { text: 'Contacts', link: '/contacts' }
     ],
