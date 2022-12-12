@@ -43,7 +43,7 @@
 
           <div class="f-left doc-action-btn mb-2">
             <p class="f-left">Learn more</p>
-            <img class="f-left doc-arrow" src="/landing/arrow_right.png">
+            <img class="f-left doc-arrow" src="/shotover-blog/landing/arrow_right.png">
           </div>
         </a>
       </div>
@@ -121,7 +121,7 @@
             class="deploy-step mb-3"
           >
             {{ step.name }}
-            <img v-if="selectedDeployOption === id" class="f-right deploy-arrow" src="/landing/arrow_right_black.png">
+            <img v-if="selectedDeployOption === id" class="f-right deploy-arrow" src="/shotover-blog/landing/arrow_right_black.png">
           </h3>
         </div>
 
@@ -146,7 +146,7 @@
 
       <div class="w-100 f-left roadmap-container" ref="roadmapContainer">
         <div class="roadmap">
-          <img src="/landing/roadmap.png">
+          <img src="/shotover-blog/landing/roadmap.png">
 
           <div
             v-for="step, id in config.roadmap.items" :key="id"
