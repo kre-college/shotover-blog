@@ -127,7 +127,7 @@
 
         <div class="w-55 f-left p-50">
           <div class="step-img-container mb-4">
-            <img class="step-img" :src="config.deploying.steps[selectedDeployOption].image">
+            <img class="step-img" :src="base(config.deploying.steps[selectedDeployOption].image)">
           </div>
 
           <p class="landing-description w-80">
