@@ -4,7 +4,9 @@
 
 :root {
   --vp-c-brand: #2355CB;
+  --vp-c-brand-dark: #2355CB;
   --vp-c-black-soft: #000000;
+  --vp-code-block-bg: rgba(255, 255, 255, 0.1);
 
   --vp-c-text-light-1: #000000;
   --vp-c-text-dark-1: #ffffff;
@@ -25,8 +27,102 @@
   background-color: var(--vp-c-black-soft) !important;
 }
 
+.language-yaml {
+  border: 2px solid #C8D4F2;
+  border-radius: 30px !important;
+  box-shadow: 8px 8px 9px 0px #C8D4F266;
+}
+.dark .language-yaml {
+  box-shadow: 8px 8px 9px 0px #00000066;
+}
+
+.language-yaml code {
+  padding: 0 40px !important;
+}
+
 .VPNavBarMenuLink.active {
   font-weight: 700;
+}
+
+.VPDocFooter {
+  display: none;
+}
+
+.VPDoc .container .content {
+  padding-bottom: 0px !important;
+}
+
+.VPDoc .container .content h1 {
+  color: var(--vp-c-text-1) !important;
+}
+.VPDoc .container .content h2 {
+  color: var(--vp-c-brand) !important;
+}
+.VPDoc .container .content h3 {
+  color: var(--vp-c-brand) !important;
+}
+.VPDoc .container .content h4 {
+  color: var(--vp-c-brand) !important;
+}
+.VPDoc .container .content h5 {
+  color: var(--vp-c-brand) !important;
+}
+.VPDoc .container .content h6 {
+  color: var(--vp-c-brand) !important;
+}
+
+.VPLink.link.active .link-text {
+  color: var(--vp-c-brand) !important;
+}
+
+.VPLink.link .link-text {
+  font-size: 16px;
+}
+
+
+#VPSidebarNav {
+  text-align: right;
+}
+
+#VPSidebarNav .title {
+  display: block;
+}
+
+#VPSidebarNav .title .title-text {
+  font-size: 20px;
+}
+
+#VPSidebarNav .group {
+  border-top: 0px;
+  margin-top: 8px;
+}
+
+#VPSidebarNav .group .items .link-text:hover {
+  color: #56BCED !important;
+}
+
+#VPSidebarNav .group:nth-of-type(2) .items .link-text {
+  font-weight: 700 !important;
+  color: var(--vp-c-text-1);
+  font-size: 20px;
+}
+#VPSidebarNav .group:nth-of-type(3) .items .link-text {
+  font-weight: 700 !important;
+  color: var(--vp-c-text-1);
+  font-size: 20px;
+}
+
+#VPSidebarNav .group:nth-of-type(4) .items span .link-text {
+  color: var(--vp-c-text-2) !important;
+  font-weight: 700 !important;
+  line-height: 30px;
+  cursor: text;
+}
+
+#VPSidebarNav .group:nth-of-type(5) .items .link-text {
+  font-weight: 700 !important;
+  color: var(--vp-c-text-1);
+  font-size: 20px;
 }
 
 ::-webkit-scrollbar {
