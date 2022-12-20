@@ -1,14 +1,16 @@
 <template>
   <div class="contacts w-100 mt-5" v-if="config.imageMsg && base">
     <div class="w-60 f-left">
-      <img :src="base(config.titleImage)" class="contacts-title">
+      <h2 class="landing-description-title">Contact us.</h2>
 
       <div
         v-for="enquiries in config.enquiries" :key="enquiries.email"
         class="enquiries mt-6"
       >
         <h3 class="contact-header">{{ enquiries.name }}</h3>
-        <h3 class="contact-info">{{ enquiries.email }}</h3>
+        <h3 class="contact-info">
+          <a :href="`mailto:${enquiries.email}`">{{ enquiries.email }}</a>
+        </h3>
       </div>
 
       <div class="adress mt-6">

@@ -235,7 +235,6 @@ export default {
 
     contacts: {
       image: ref('/contacts.png'),
-      titleImage: ref('/title_image.png'),
       imageMsg: 'For general questions ask a member of our team, who will be happy to help!',
 
       enquiries: [
