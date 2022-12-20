@@ -204,23 +204,18 @@ export default {
   methods : {
     onScroll (event) {
       const c = this.$refs.roadmapContainer
+      const offsetTop = c.getBoundingClientRect().top
 
-      if (
-        event.deltaY > 0
-          ? (event.view.pageYOffset + event.deltaY >= 5640 && event.view.pageYOffset - event.deltaY <= 5660)
-          : (event.view.pageYOffset - event.deltaY >= 5640 && event.view.pageYOffset + event.deltaY <= 5660)
-      ) {
-        if (
-          (c.scrollLeft + window.innerWidth === 2900 && event.deltaY > 0) || 
-          (c.scrollLeft === 0 && event.deltaY <= 0)
-        ) {
-          document.getElementsByTagName('body')[0].classList.remove("no-scroll-y")
-          return
-        }
-
+      if (offsetTop >= 80 && offsetTop <= 160) {
         document.getElementsByTagName('body')[0].classList.add("no-scroll-y")
-        c.scrollLeft += event.deltaY
-        event.preventDefault()
+
+        if (event.deltaY > 0 ? c.scrollLeft + window.innerWidth >= 2890 : c.scrollLeft === 0) {
+          document.getElementsByTagName('body')[0].classList.remove("no-scroll-y")
+        } else {
+          c.scrollLeft += event.deltaY
+        }
+      } else {
+        document.getElementsByTagName('body')[0].classList.remove("no-scroll-y")
       }
     }
   }
