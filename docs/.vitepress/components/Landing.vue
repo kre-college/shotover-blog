@@ -1,6 +1,6 @@
 <template>
   <div class="landing w-100 f-left" v-if="config.title && base" @wheel="onScroll($event)">
-    <div class="w-100 f-left mb-18">
+    <div class="w-100 f-left mb-18 landing-main-title">
       <div class="w-55 f-left mt-5 pl-130">
         <h1 class="shotover-title w-100 f-left">{{ config.title }}</h1>
         <h2 class="shotover-subtitle w-100 f-left">
@@ -20,8 +20,8 @@
     </div>
 
     <div class="w-100 f-left p-130 mb-24">
-      <div class="w-43 f-left">
-        <h2 class="landing-description-title">
+      <div class="w-43 f-left pr-2">
+        <h2 class="landing-description-title mb-sm-1">
           {{ config.description.title }}
         </h2>
       </div>
