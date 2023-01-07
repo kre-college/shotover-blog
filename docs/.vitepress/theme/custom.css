@@ -173,6 +173,8 @@
 
 .pl-130 { padding-left: 130px }
 
+.pr-2 { padding-right: 20px }
+
 .pb-5 { padding-bottom: 50px }
 
 .text-left { text-align: left }
@@ -577,10 +579,210 @@
     left: 50%;
     transform: translate(-50%, 0);
   }
+
+  .landing-description-title, .landing-docs-title, .landing-problems-title, .landing-title {
+    text-align: center;
+  }
+
+  .landing-docs-title {
+    max-width: 100% !important;
+  }
+
+  .landing-title {
+    width: 100%;
+  }
+
+  .landing-description.w-50 {
+    width: 100%;
+  }
+
+  .landing-description, .problems-description {
+    text-align: justify;
+  }
+
+  .w-65.problems-description {
+    width: 100%;
+  }
+
+  .w-50.problems-description {
+    width: 100%;
+  }
+
+  .problem-card {
+    width: 100%;
+    margin-top: 0px !important;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding: 20px 30px;
+  }
+
+  .problem-card .w-80 {
+    width: 100%;
+  }
+
+  .landing-deploy .landing-description.w-80 {
+    width: 100%;
+  }
+
+  .landing-deploy .p-50 {
+    padding: 0px;
+  }
+
+  .landing-main-title {
+    text-align: center;
+  }
+
+  .landing-main-title .w-55 {
+    width: 100%;
+  }
+
+  .landing-main-title .w-45 {
+    display: none;
+  }
 }
 
 @media (max-width: 928px) {
   .p-130 {
     padding: 20px !important;
+  }
+
+  .pl-130 {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
+  .p-105 {
+    padding: 20px !important;
+  }
+
+  .p-90 {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .landing-deploy .w-45 {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .landing-deploy .w-55 {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1235px) {
+  .deploy-arrow {
+    display: none;
+  }
+
+  .p-90 {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  .w-43 {
+    width: 100%;
+  }
+
+  .pr-2 {
+    padding-right: 0px;
+  }
+
+  .w-57 {
+    width: 100%;
+  }
+
+  .mb-sm-1 {
+    margin-bottom: 10px;
+  }
+
+  .landing-problems-title {
+    width: 100%;
+  }
+
+  .proxy-item {
+    display: none;
+  }
+
+  .landing-deploy .w-40 {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1360px) {
+  .docs-block {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 30px;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+}
+
+@media (min-width: 1236px) and (max-width: 1376px) {
+  .landing-problems-title {
+    width: 80%;
+  }
+}
+
+@media (max-width: 1487px) {
+  .landing-docs-title {
+    width: 100%;
+    max-width: 675px;
+  }
+
+  .problem-card {
+    padding: 20px 30px;
+  }
+
+  .problem-card .w-80 {
+    width: 100%;
+  }
+
+  .shotover-title {
+    font-size: 75px;
+    line-height: 85px;
+  }
+
+  .shotover-subtitle {
+    font-size: 30px;
+    line-height: 52px;
+  }
+
+  .landing-description-title {
+    font-size: 60px;
+    line-height: 69px;
+  }
+
+  .landing-docs-title {
+    font-size: 45px;
+    line-height: 56px;
+  }
+
+  .doc-name {
+    font-size: 32px;
+    line-height: 42px;
+  }
+
+  .landing-problems-title {
+    font-size: 45px;
+    line-height: 60px;
+  }
+
+  .landing-proxy-title {
+    font-size: 70px;
+    line-height: 100px;
+  }
+
+  .landing-title {
+    font-size: 55px;
+    line-height: 70px;
+  }
+
+  .deploy-step {
+    font-size: 35px;
+    line-height: 45px;
   }
 }
