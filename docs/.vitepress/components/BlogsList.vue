@@ -18,6 +18,15 @@
           </a>
         </div>
       </div>
+
+      <Pagination
+        :page="currentPage"
+        :perPage="postsCountOnPage"
+        :totalItems="config.posts.length"
+        :images="config.images"
+        @updatePage="updatePage($event)"
+        v-if="config.posts"
+      />
     </div>
   </div>
 
@@ -36,8 +45,11 @@
 
 <script>
 import { withBase } from 'vitepress'
+import Pagination from './Pagination.vue'
 
 export default {
+  components: { Pagination },
+
   data () {
     return {
       config: {},
@@ -45,7 +57,7 @@ export default {
 
       posts: [],
       currentPage: 1,
-      postsCountOnPage: 20,
+      postsCountOnPage: 10,
       selectedCategory: ''
     }
   },
@@ -61,7 +73,8 @@ export default {
   },
 
   beforeUnmount () {
-    document.getElementById('VPSidebarNav').style.display = 'block'
+    const sidebar = document.getElementById('VPSidebarNav')
+    if (sidebar) sidebar.style.display = 'block'
   },
 
   methods: {
@@ -69,7 +82,7 @@ export default {
       this.posts = []
 
       for (let i = (this.currentPage - 1) * this.postsCountOnPage; this.posts.length !== this.postsCountOnPage && i < this.config.posts.length; i++) {
-        await import(/* @vite-ignore */this.base(this.config.posts[i])).then(post => {
+        await import(this.base(this.config.posts[i])/* @vite-ignore */).then(post => {
           if (
             post.__pageData.frontmatter.categories.includes(this.selectedCategory) ||
             this.selectedCategory === '' ||
@@ -91,6 +104,13 @@ export default {
     applyCategory (category) {
       this.selectedCategory === category ? this.selectedCategory = '' : this.selectedCategory = category
       this.currentPage = 1
+
+      this.getPosts()
+    },
+
+    updatePage(page) {
+      if (this.currentPage === page) return
+      this.currentPage = page
 
       this.getPosts()
     }
