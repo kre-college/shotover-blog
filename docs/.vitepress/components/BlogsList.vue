@@ -69,7 +69,7 @@ export default {
       this.posts = []
 
       for (let i = (this.currentPage - 1) * this.postsCountOnPage; this.posts.length !== this.postsCountOnPage && i < this.config.posts.length; i++) {
-        await import(/* @vite-ignore */this.config.posts[i]).then(post => {
+        await import(/* @vite-ignore */this.base(this.config.posts[i])).then(post => {
           if (
             post.__pageData.frontmatter.categories.includes(this.selectedCategory) ||
             this.selectedCategory === '' ||
