@@ -24,6 +24,17 @@ export default {
       { text: 'Contacts', link: '/contacts' }
     ],
 
+    blog: {
+      title: 'Welcome to our blog!',
+
+      categories: ['how-to', 'opinion', 'uncategorized', 'updates'],
+
+      posts: [
+        '../../blog/posts/example1.md',
+        '../../blog/posts/example2.md'
+      ]
+    },
+
     sidebar: [
       {
         text: 'User Guide',
