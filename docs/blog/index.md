@@ -2,6 +2,9 @@
 aside: false
 ---
 
-# Blog
+<script setup>
+import BlogsList from '../.vitepress/components/BlogsList.vue'
+</script>
 
+<BlogsList />
 <Footer />

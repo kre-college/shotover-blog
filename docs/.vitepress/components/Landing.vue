@@ -139,7 +139,7 @@
 
     <div class="w-100 f-left mb-18">
       <div class="p-130">
-        <h2 class="landing-title w-100 f-left mb-2">
+        <h2 id="roadmap" ref="roadmap" class="landing-title w-100 f-left mb-2">
           {{ config.roadmap.title }}
         </h2>
       </div>
@@ -199,6 +199,12 @@ export default {
     import('../config').then(config => {
       this.config = config.default.pagesConfig.landing
     })
+
+    if (window.location.hash) {
+      setTimeout(() => {
+        window.scrollTo(0, this.$refs.roadmap.offsetTop)
+      }, 100)
+    }
   },
 
   methods : {
