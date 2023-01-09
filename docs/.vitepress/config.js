@@ -30,9 +30,14 @@ export default {
       categories: ['how-to', 'opinion', 'uncategorized', 'updates'],
 
       posts: [
-        '../../blog/posts/example1.md',
-        '../../blog/posts/example2.md'
-      ]
+        '/blog/posts/example1.md',
+        '/blog/posts/example2.md'
+      ],
+
+      images: {
+        arrowLeft: ref('/blog/arrowLeft.png'),
+        arrowRight: ref('/blog/arrowRight.png'),
+      }
     },
 
     sidebar: [
