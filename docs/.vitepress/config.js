@@ -27,7 +27,7 @@ export default {
     blog: {
       title: 'Welcome to our blog!',
 
-      categories: ['how-to', 'opinion', 'uncategorized', 'updates'],
+      categories: ['how-to', 'opinion', 'updates', 'uncategorized'],
 
       posts: [
         '/blog/posts/example1.md',
