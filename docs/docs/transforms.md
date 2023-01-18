@@ -555,5 +555,3 @@ This transform will backpressure requests to Shotover, ensuring that throughput 
 - RequestThrottling
     max_requests_per_second: 20000
 ```
-
-<Footer />

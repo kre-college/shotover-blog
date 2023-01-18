@@ -39,7 +39,13 @@
       class="post-category f-left w-100"
     >{{ c }}</p>
 
-    <!-- <h3 class="f-left w-100">Archive</h3> -->
+    <h3 class="f-left w-100">Archive</h3>
+    <input
+      :value="selectedDate || new Date().toISOString().slice(0, 7)"
+      @input="applyDate($event.target.value)"
+      type="month"
+      class="archive-input"
+    />
   </div>
 </template>
 
@@ -57,8 +63,11 @@ export default {
 
       postsToShow: [],
       filteredPosts: [],
+
       currentPage: 1,
       postsCountOnPage: 10,
+
+      selectedDate: '',
       selectedCategory: ''
     }
   },
@@ -86,9 +95,25 @@ export default {
 
       this.filteredPosts = this.config.posts.filter(post => {
         return (
-          post.categories.includes(this.selectedCategory) ||
-          this.selectedCategory === '' ||
-          (this.selectedCategory === 'uncategorized' && post.categories.length === 0)
+          (
+            this.selectedCategory === '' && this.selectedDate === ''
+          ) ||
+          (
+            this.selectedCategory !== '' &&
+            this.selectedDate === '' &&
+            (post.categories.includes(this.selectedCategory) || (this.selectedCategory === 'uncategorized' && post.categories.length === 0))
+          ) ||
+          (
+            this.selectedCategory === '' &&
+            this.selectedDate !== '' &&
+            post.dateAdded.includes(this.selectedDate)
+          ) ||
+          (
+            this.selectedCategory !== '' &&
+            this.selectedDate !== '' &&
+            post.dateAdded.includes(this.selectedDate) &&
+            (post.categories.includes(this.selectedCategory) || (this.selectedCategory === 'uncategorized' && post.categories.length === 0))
+          )
         )
       })
 
@@ -107,6 +132,12 @@ export default {
 
     applyCategory (category) {
       this.selectedCategory === category ? this.selectedCategory = '' : this.selectedCategory = category
+
+      this.filterPosts()
+    },
+
+    applyDate (date) {
+      this.selectedDate === date ? this.selectedDate = '' : this.selectedDate = date
 
       this.filterPosts()
     },

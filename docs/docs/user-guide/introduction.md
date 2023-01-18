@@ -62,5 +62,3 @@ Individual transforms can also dramatically impact performance as well.
 Shotover will not try to explicitly pipeline, aggregate or batch requests (though feel free to write a transform to do so!) unless it is built into the source protocol (e.g. RESP2 supports cmd pipelining) or via a transform. Most client drivers support connection pooling and multiple connections, so feel free to ramp up the number of outbound sockets to get the best throughput. Shotover will happily work with 100's or 1000's of connections due to its threading model.
 
 Performance hasn't been a primary focus during initial development and there are definitely some easy wins to improve things.
-
-<Footer />

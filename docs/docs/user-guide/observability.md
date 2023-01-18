@@ -33,5 +33,3 @@ You can configure log levels and filters at `/filter`. This can be done by a POS
 ```shell
 curl -X PUT -d 'info,shotover_proxy=info' http://127.0.0.1:9001/filter
 ```
-
-<Footer />
