@@ -142,5 +142,3 @@ source_to_chain_mapping:
 In this example we will set your `max_requests_per_second` to 40,000. This will allow a max of 40,000 queries per second to go through this Shotover instance, across all connections.
 
 After completing this step you can restart your cluster with `docker-compose restart` to enable rate limiting.
-
-<Footer />

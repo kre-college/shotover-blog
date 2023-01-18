@@ -18,5 +18,3 @@ A transform chain is a ordered list of transforms that a message will pass throu
 ## Topology
 
 A topology is how you configure Shotover. You define your sources, your transforms in a transform chain and then assign the chain to a source.
-
-<Footer />

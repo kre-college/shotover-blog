@@ -7,4 +7,3 @@ import BlogsList from '../.vitepress/components/BlogsList.vue'
 </script>
 
 <BlogsList />
-<Footer />

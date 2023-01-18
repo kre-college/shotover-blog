@@ -89,5 +89,3 @@ Before submitting a PR you can run the following to ensure it will pass CI:
 * Run `cargo clippy` - Ensure you haven't introduced any warnings.
 * Run `cargo build --all-targets` - Ensure everything still builds and you haven't introduced any warnings.
 * Run `cargo test` - All tests pass.
-
-<Footer />

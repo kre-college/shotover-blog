@@ -62,5 +62,3 @@ Redis:
   # Timeout in seconds after which to terminate an idle connection. This field is optional, if not provided, idle connections will never be terminated.
   # timeout: 60
 ```
-
-<Footer />

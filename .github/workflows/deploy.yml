@@ -16,10 +16,10 @@ jobs:
         with:
           node-version: 16
           cache: npm
-      - run: npm install --frozen-lockfile
+      - run: echo "<Footer />" | tee -a docs/blog/*.md && echo "<Footer />" | tee -a docs/docs/*.md && npm install --frozen-lockfile
 
       - name: Build
-        run: npm run docs:build && cp -a docs/blog/posts/. docs/.vitepress/dist/blog/posts/
+        run: npm run docs:build
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
