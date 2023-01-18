@@ -76,11 +76,12 @@ export default {
     document.getElementById('VPSidebarNav').style.display = 'none'
     this.base = withBase
 
+    this.processSearchString()
+
     import('../config').then(config => {
       this.config = config.default.themeConfig.blog
 
-      this.filteredPosts = this.config.posts
-      this.setPostsToShow()
+      this.filterPosts()
     })
   },
 
@@ -91,8 +92,6 @@ export default {
 
   methods: {
     async filterPosts () {
-      this.currentPage = 1
-
       this.filteredPosts = this.config.posts.filter(post => {
         return (
           (
@@ -132,12 +131,16 @@ export default {
 
     applyCategory (category) {
       this.selectedCategory === category ? this.selectedCategory = '' : this.selectedCategory = category
+      this.currentPage = 1
+      this.setSearchString()
 
       this.filterPosts()
     },
 
     applyDate (date) {
       this.selectedDate === date ? this.selectedDate = '' : this.selectedDate = date
+      this.currentPage = 1
+      this.setSearchString()
 
       this.filterPosts()
     },
@@ -145,8 +148,27 @@ export default {
     updatePage(page) {
       if (this.currentPage === page) return
       this.currentPage = page
+      this.setSearchString()
 
       this.setPostsToShow()
+    },
+
+    setSearchString () {
+      let search = `?p=${this.currentPage}`
+      if (this.selectedDate) search += `&d=${this.selectedDate}`
+      if (this.selectedCategory) search += `&c=${this.selectedCategory}`
+
+      history.pushState(null, '', window.location.href.split('?')[0] + search)
+    },
+
+    processSearchString () {
+      if (window.location.search) {
+        window.location.search.split('&').forEach(filter => {
+          if (filter.includes('?p=')) this.currentPage = +filter.split('=')[1]
+          if (filter.includes('d=')) this.selectedDate = filter.split('=')[1]
+          if (filter.includes('c=')) this.selectedCategory = filter.split('=')[1]
+        })
+      }
     },
 
     processData (data) {
