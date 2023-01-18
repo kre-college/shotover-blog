@@ -16,7 +16,7 @@ jobs:
         with:
           node-version: 16
           cache: npm
-      - run: echo "<Footer />" | tee -a docs/blog/*.md && echo "<Footer />" | tee -a docs/docs/*.md && npm install --frozen-lockfile
+      - run: npm install --frozen-lockfile && echo "<Footer />" | tee -a docs/blog/*.md && echo "<Footer />" | tee -a docs/blog/**/*.md && echo "<Footer />" | tee -a docs/docs/*.md && echo "<Footer />" | tee -a docs/docs/**/*.md
 
       - name: Build
         run: npm run docs:build
