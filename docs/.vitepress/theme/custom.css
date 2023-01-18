@@ -894,6 +894,14 @@
   .post-description {
     text-align: justify;
   }
+
+  .related-posts {
+    text-align: center;
+  }
+
+  .related-post-container {
+    width: 100% !important;
+  }
 }
 
 @media (max-width: 928px) {
