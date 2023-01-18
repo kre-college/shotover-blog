@@ -1,11 +1,3 @@
----
-dateAdded: '2023-01-27'
-pathToImage: 'https://www.simplilearn.com/ice9/free_resources_article_thumb/what_is_image_Processing.jpg'
-description: 'No matter what stage a company is at, there’s always a palpable fear of vendor lock-in when adopting new software. This fear becomes heightened when it comes to database systems.  Vendor lock-in is prevalent with proprietary software, where vendors...o matter what stage a company is at, there’s always a palpable fear of vendor lock-in when adopting new software. This fear becomes heightened when it comes to database systems.  Vendor lock-in is prevalent with proprietary software, where vendors...'
-
-categories: ['how-to', 'opinion']
----
-
 # How to Keep Control of Your Data and Infrastructure
 
 No matter what stage a company is at, there’s always a palpable fear of vendor lock-in when adopting new software. This fear becomes heightened when it comes to database systems. 
