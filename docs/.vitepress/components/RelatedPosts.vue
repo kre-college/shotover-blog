@@ -1,5 +1,5 @@
 <template>
-  <div class="related-posts f-left w-100">
+  <div class="related-posts f-left w-100" v-if="base">
     <h2 style="margin-bottom: 40px">{{ config.title }}</h2>
 
     <div
