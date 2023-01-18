@@ -4,7 +4,7 @@
 
     <div
       v-for="post in relatedPosts" :key="post.path"
-      class="px-2 f-left mb-4" :style="`width: calc(100% / ${relatedPosts.length})`"
+      class="px-2 f-left mb-4 related-post-container" :style="`width: calc(100% / ${relatedPosts.length})`"
     >
       <div class="related-post f-left w-100">
         <h3 style="color: var(--vp-c-text-1) !important">{{ post.title }}</h3>
