@@ -1,11 +1,3 @@
----
-dateAdded: '2022-01-21'
-pathToImage: 'https://d27jswm5an3efw.cloudfront.net/app/uploads/2019/07/insert-image-html.jpg'
-description: 'According to Wikipedia, “vendor lock-in, also known as proprietary lock-in or customer lock-in, makes a customer dependent on a vendor for products, unable to use another vendor without substantial switching costs'
-
-categories: ['updates']
----
-
 # What is vendor lock-in?
 
 According to Wikipedia, “vendor lock-in, also known as proprietary lock-in or customer lock-in, makes a customer dependent on a vendor for products, unable to use another vendor without substantial switching costs.

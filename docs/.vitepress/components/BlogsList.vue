@@ -3,17 +3,17 @@
     <div class="w-100 f-left">
       <h1 class="blog-title mb-8">{{ config.title }}</h1>
 
-      <div v-for="post in posts" :key="post.__pageData.relativePath" class="w-100 f-left mb-6">
-        <div class="post-img-sm f-left" :style="`background-image: url('${post.__pageData.frontmatter.pathToImage}')`"></div>
+      <div v-for="post in postsToShow" :key="post.path" class="w-100 f-left mb-6">
+        <div class="post-img-sm f-left" :style="`background-image: url('${post.pathToImage}')`"></div>
 
         <div class="post-info f-left pl-6">
-          <h2 class="post-title" style="color: var(--vp-c-text-1) !important">{{ post.__pageData.title }}</h2>
+          <h2 class="post-title" style="color: var(--vp-c-text-1) !important">{{ post.title }}</h2>
 
-          <p class="post-description">{{ post.__pageData.description }}</p>
+          <p class="post-description">{{ post.description }}</p>
 
-          <p class="post-date">{{ processData(post.__pageData.frontmatter.dateAdded) }}</p>
+          <p class="post-date">{{ processData(post.dateAdded) }}</p>
 
-          <a class="post-btn" :href="base(`${post.__pageData.relativePath.split('.md')[0]}.html`)">
+          <a class="post-btn" :href="base(`${post.path.split('.md')[0]}`)">
             Read more
           </a>
         </div>
@@ -22,10 +22,10 @@
       <Pagination
         :page="currentPage"
         :perPage="postsCountOnPage"
-        :totalItems="config.posts.length"
+        :totalItems="filteredPosts.length"
         :images="config.images"
         @updatePage="updatePage($event)"
-        v-if="config.posts"
+        v-if="filteredPosts.length"
       />
     </div>
   </div>
@@ -55,7 +55,8 @@ export default {
       config: {},
       base: null,
 
-      posts: [],
+      postsToShow: [],
+      filteredPosts: [],
       currentPage: 1,
       postsCountOnPage: 10,
       selectedCategory: ''
@@ -68,7 +69,9 @@ export default {
 
     import('../config').then(config => {
       this.config = config.default.themeConfig.blog
-      this.getPosts()
+
+      this.filteredPosts = this.config.posts
+      this.setPostsToShow()
     })
   },
 
@@ -78,20 +81,41 @@ export default {
   },
 
   methods: {
-    async getPosts () {
-      this.posts = []
+    async filterPosts () {
+      this.currentPage = 1
 
-      for (let i = (this.currentPage - 1) * this.postsCountOnPage; this.posts.length !== this.postsCountOnPage && i < this.config.posts.length; i++) {
-        await import(this.base(this.config.posts[i])/* @vite-ignore */).then(post => {
-          if (
-            post.__pageData.frontmatter.categories.includes(this.selectedCategory) ||
-            this.selectedCategory === '' ||
-            (this.selectedCategory === 'uncategorized' && post.__pageData.frontmatter.categories.length === 0)
-          ) {
-            this.posts.push(post)
-          }
-        })
+      this.filteredPosts = this.config.posts.filter(post => {
+        return (
+          post.categories.includes(this.selectedCategory) ||
+          this.selectedCategory === '' ||
+          (this.selectedCategory === 'uncategorized' && post.categories.length === 0)
+        )
+      })
+
+      this.setPostsToShow()
+    },
+
+    setPostsToShow () {
+      const postsToShow = []
+
+      for (let i = (this.currentPage - 1) * this.postsCountOnPage; postsToShow.length !== this.postsCountOnPage && i < this.filteredPosts.length; i++) {
+        postsToShow.push(this.filteredPosts[i])
       }
+
+      this.postsToShow = postsToShow
+    },
+
+    applyCategory (category) {
+      this.selectedCategory === category ? this.selectedCategory = '' : this.selectedCategory = category
+
+      this.filterPosts()
+    },
+
+    updatePage(page) {
+      if (this.currentPage === page) return
+      this.currentPage = page
+
+      this.setPostsToShow()
     },
 
     processData (data) {
@@ -99,20 +123,6 @@ export default {
       const dataParts = data.split('-')
 
       return `${months[+dataParts[1]]} ${dataParts[2]}, ${dataParts[0]}`
-    },
-
-    applyCategory (category) {
-      this.selectedCategory === category ? this.selectedCategory = '' : this.selectedCategory = category
-      this.currentPage = 1
-
-      this.getPosts()
-    },
-
-    updatePage(page) {
-      if (this.currentPage === page) return
-      this.currentPage = page
-
-      this.getPosts()
     }
   }
 }
