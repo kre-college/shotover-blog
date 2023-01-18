@@ -20,7 +20,7 @@ jobs:
           npm install --frozen-lockfile &&
           echo "<Footer />" | tee -a docs/blog/*.md &&
           echo "<Footer />" | tee -a docs/docs/*.md &&
-          echo "<Footer />" | tee -a docs/blog/**/*.md &&
+          echo "<SocialButtons /><RelatedPosts /><Footer />" | tee -a docs/blog/**/*.md &&
           echo "<Footer />" | tee -a docs/docs/**/*.md
 
       - name: Build

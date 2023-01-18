@@ -1,5 +1,6 @@
 # What is vendor lock-in?
 
+![](https://d27jswm5an3efw.cloudfront.net/app/uploads/2019/07/insert-image-html.jpg "What is vendor lock-in?")
 According to Wikipedia, “vendor lock-in, also known as proprietary lock-in or customer lock-in, makes a customer dependent on a vendor for products, unable to use another vendor without substantial switching costs.
 Vendor lock-in is prevalent with proprietary software, where vendors make users sweat over leaving the platform to adopt a new one. This essentially defeats the purpose of having a future-proof tech stack. 
 
