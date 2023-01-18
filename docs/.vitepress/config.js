@@ -1,5 +1,8 @@
 import { ref } from 'vue'
 
+import Posts from '../blog/config'
+import DocsSidebar from '../docs/config'
+
 export default {
   lang: 'en-US',
   title: 'Shotover',
@@ -29,10 +32,7 @@ export default {
 
       categories: ['how-to', 'opinion', 'updates', 'uncategorized'],
 
-      posts: [
-        '/blog/posts/example1.md',
-        '/blog/posts/example2.md'
-      ],
+      posts: Posts,
 
       images: {
         arrowLeft: ref('/blog/arrowLeft.png'),
@@ -40,51 +40,7 @@ export default {
       }
     },
 
-    sidebar: [
-      {
-        text: 'User Guide',
-        items: [
-          { text: 'Introduction', link: '/docs/user-guide/introduction' },
-          { text: 'Getting Started', link: '/docs/user-guide/getting-started' },
-          { text: 'Concepts', link: '/docs/user-guide/concepts' },
-          { text: 'Configuration', link: '/docs/user-guide/configuration' },
-          { text: 'Observability', link: '/docs/user-guide/observability' }
-        ]
-      },
-      {
-        items: [
-          { text: 'Source Types', link: '/docs/source-types' }
-        ]
-      },
-      {
-        items: [
-          { text: 'Transforms', link: '/docs/transforms' }
-        ]
-      },
-      {
-        text: 'Examples',
-        items: [
-          {
-            text: 'Redis Cluster',
-            items: [
-              { text: 'Unaware client', link: '/docs/examples/redis-clustering-unaware' },
-              { text: 'Aware client', link: '/docs/examples/redis-clustering-aware' }
-            ]
-          },
-          {
-            text: 'Cassandra Cluster',
-            items: [
-              { text: 'Shotover sidecars', link: '/docs/examples/cassandra-cluster-shotover-sidecar' }
-            ]
-          }
-        ]
-      },
-      {
-        items: [
-          { text: 'Contributing', link: '/docs/contributing' }
-        ]
-      }
-    ]
+    sidebar: DocsSidebar
   },
 
   pagesConfig: {
