@@ -1,5 +1,7 @@
 # How to Keep Control of Your Data and Infrastructure
 
+![](https://www.simplilearn.com/ice9/free_resources_article_thumb/what_is_image_Processing.jpg "How to Keep Control of Your Data and Infrastructure")
+
 No matter what stage a company is at, there’s always a palpable fear of vendor lock-in when adopting new software. This fear becomes heightened when it comes to database systems. 
 Vendor lock-in is prevalent with proprietary software, where vendors make users sweat over leaving the platform to adopt a new one. This essentially defeats the purpose of having a future-proof tech stack. 
 

@@ -40,6 +40,32 @@ export default {
       }
     },
 
+    social: {
+      title: 'Share this article',
+
+      copyImg: '/social/link.png',
+      links: [
+        {
+          img: ref('/social/twitter.png'),
+          url: '#'
+        },
+        {
+          img: ref('/social/linkedin.png'),
+          url: '#'
+        },
+        {
+          img: ref('/social/rss_shape.png'),
+          url: '#'
+        }
+      ]
+    },
+
+    relatedPosts: {
+      title: 'Related posts',
+      postsCount: 3,
+      allBlogsLink: '/blog/'
+    },
+
     sidebar: DocsSidebar
   },
 
