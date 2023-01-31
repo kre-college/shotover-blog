@@ -7,7 +7,7 @@ export default {
   lang: 'en-US',
   title: 'Shotover',
   description: 'Shotover Description',
-  base: '/shotover-blog/',
+  base: '/',
 
   head: [
     ['link', { rel: 'icon', type: 'image/x-icon', href: '/shotover-blog/favicon.ico' }]
