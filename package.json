@@ -19,6 +19,8 @@
   "author": "andrii.s.vashchuk@gmail.com",
   "license": "ISC",
   "dependencies": {
+    "@vue/compat": "^3.2.47",
+    "bootstrap": "^5.2.3",
     "vitepress": "^1.0.0-alpha.29",
     "vue": "^3.2.45"
   },
