@@ -7,7 +7,7 @@ export default {
   lang: 'en-US',
   title: 'Shotover',
   description: 'Shotover Description',
-  base: '/shotover-blog/',
+  base: '/',
 
   head: [
     ['link', { rel: 'icon', type: 'image/x-icon', href: '/shotover-blog/favicon.ico' }]
@@ -28,7 +28,7 @@ export default {
     ],
 
     blog: {
-      title: 'Welcome to our blog!',
+      title: 'Shotover Proxy blog',
 
       categories: ['how-to', 'opinion', 'updates', 'uncategorized'],
 
@@ -132,97 +132,97 @@ export default {
           }
         ]
       },
-
-      deploying: {
-        title: 'Deploying Shotover',
-        description: 'Shotover can be deployed in a number of ways, it will generally be based on the problem you are trying to solve, but they all fall into three categories:',
-        steps: [
-          {
-            name: 'Application sidecar',
-            image: ref('/landing/deploy1.png'),
-            description: 'Shotover is pretty lightweight, so feel free to deploy it as a sidecar to each of your application instances.'
-          },
-          {
-            name: 'Stand alone proxy',
-            image: ref('/landing/deploy2.png'),
-            description: 'If you are building a Service/DBaaS/Common data layer, you can deploy Shotover on standalone hardware and really let it fly.'
-          },
-          {
-            name: 'Sidecar to your database',
-            image: ref('/landing/deploy3.png'),
-            description: 'You can also stick Shotover on the same instance/server as your database is running on, we do it, so we won\'t judge you.'
-          }
-        ]
-      },
-
-      roadmap: {
-        title: 'Roadmap',
-        items: [
-          {
-            text: 'Support relevant xDS APIs (so Shotover can play nicely with service mesh implementations)',
-            linePosition: 'bottom',
-            height: 150,
-            top: 134,
-            left: 130
-          },
-          {
-            text: 'Support hot-reloads and a dynamic configuration API.',
-            linePosition: 'bottom',
-            height: 130,
-            top: 260,
-            left: 460
-          },
-          {
-            text: 'Additional sources (DynamoDB and PostgreSQL are good first candidates).',
-            linePosition: 'bottom',
-            height: 140,
-            top: 75,
-            left: 790
-          },
-          {
-            text: 'Add support for rate limiting, explicit back-pressure mechanisms, etc.',
-            linePosition: 'bottom',
-            height: 100,
-            top: 225,
-            left: 1100
-          },
-          {
-            text: 'Additional Distributed algorithm transform primitives (e.g RAFT, 2PC, etc).',
-            linePosition: 'bottom',
-            height: 140,
-            top: 40,
-            left: 1430
-          },
-          {
-            text: 'Additional sink transforms (these generally get implemented alongside sources).',
-            linePosition: 'top',
-            height: 165,
-            top: 233,
-            left: 1600
-          },
-          {
-            text: 'Support user-defined / generated sources (e.g. thrift or a gRPC service from a proto definition).',
-            linePosition: 'bottom',
-            height: 90,
-            top: 208,
-            left: 1860
-          },
-          {
-            text: 'Simulation testing once tokio-rs/simulation reaches compatibility with tokio-2.0',
-            linePosition: 'bottom',
-            height: 100,
-            top: 28,
-            left: 2220
-          },
-          {
-            text: 'Zero-copy pass-through transforms and in-place query editing (performance).',
-            linePosition: 'top',
-            height: 165,
-            top: 215,
-            left: 2415
-          }
-        ]
-      },
+      //
+      // deploying: {
+      //   title: 'Deploying Shotover',
+      //   description: 'Shotover can be deployed in a number of ways, it will generally be based on the problem you are trying to solve, but they all fall into three categories:',
+      //   steps: [
+      //     {
+      //       name: 'Application sidecar',
+      //       image: ref('/landing/deploy1.png'),
+      //       description: 'Shotover is pretty lightweight, so feel free to deploy it as a sidecar to each of your application instances.'
+      //     },
+      //     {
+      //       name: 'Stand alone proxy',
+      //       image: ref('/landing/deploy2.png'),
+      //       description: 'If you are building a Service/DBaaS/Common data layer, you can deploy Shotover on standalone hardware and really let it fly.'
+      //     },
+      //     {
+      //       name: 'Sidecar to your database',
+      //       image: ref('/landing/deploy3.png'),
+      //       description: 'You can also stick Shotover on the same instance/server as your database is running on, we do it, so we won\'t judge you.'
+      //     }
+      //   ]
+      // },
+      //
+      // roadmap: {
+      //   title: 'Roadmap',
+      //   items: [
+      //     {
+      //       text: 'Support relevant xDS APIs (so Shotover can play nicely with service mesh implementations)',
+      //       linePosition: 'bottom',
+      //       height: 150,
+      //       top: 134,
+      //       left: 130
+      //     },
+      //     {
+      //       text: 'Support hot-reloads and a dynamic configuration API.',
+      //       linePosition: 'bottom',
+      //       height: 130,
+      //       top: 260,
+      //       left: 460
+      //     },
+      //     {
+      //       text: 'Additional sources (DynamoDB and PostgreSQL are good first candidates).',
+      //       linePosition: 'bottom',
+      //       height: 140,
+      //       top: 75,
+      //       left: 790
+      //     },
+      //     {
+      //       text: 'Add support for rate limiting, explicit back-pressure mechanisms, etc.',
+      //       linePosition: 'bottom',
+      //       height: 100,
+      //       top: 225,
+      //       left: 1100
+      //     },
+      //     {
+      //       text: 'Additional Distributed algorithm transform primitives (e.g RAFT, 2PC, etc).',
+      //       linePosition: 'bottom',
+      //       height: 140,
+      //       top: 40,
+      //       left: 1430
+      //     },
+      //     {
+      //       text: 'Additional sink transforms (these generally get implemented alongside sources).',
+      //       linePosition: 'top',
+      //       height: 165,
+      //       top: 233,
+      //       left: 1600
+      //     },
+      //     {
+      //       text: 'Support user-defined / generated sources (e.g. thrift or a gRPC service from a proto definition).',
+      //       linePosition: 'bottom',
+      //       height: 90,
+      //       top: 208,
+      //       left: 1860
+      //     },
+      //     {
+      //       text: 'Simulation testing once tokio-rs/simulation reaches compatibility with tokio-2.0',
+      //       linePosition: 'bottom',
+      //       height: 100,
+      //       top: 28,
+      //       left: 2220
+      //     },
+      //     {
+      //       text: 'Zero-copy pass-through transforms and in-place query editing (performance).',
+      //       linePosition: 'top',
+      //       height: 165,
+      //       top: 215,
+      //       left: 2415
+      //     }
+      //   ]
+      // },
 
       name: {
         title: 'Name',
@@ -231,27 +231,27 @@ export default {
       }
     },
 
-    contacts: {
-      image: ref('/contacts.png'),
-      imageMsg: 'For general questions ask a member of our team, who will be happy to help!',
-
-      enquiries: [
-        {
-          name: 'General enquiries:',
-          email: 'enquiries@shotover.io'
-        },
-        {
-          name: 'Recruitment enquiries:',
-          email: 'recruitment@shotover.io'
-        }
-      ],
-
-      adress: {
-        company: 'Shotover',
-        city: 'Christchurch',
-        country: 'New Zealand'
-      }
-    }
+    // contacts: {
+    //   image: ref('/contacts.png'),
+    //   imageMsg: 'For general questions ask a member of our team, who will be happy to help!',
+    //
+    //   enquiries: [
+    //     {
+    //       name: 'General enquiries:',
+    //       email: 'enquiries@shotover.io'
+    //     },
+    //     {
+    //       name: 'Recruitment enquiries:',
+    //       email: 'recruitment@shotover.io'
+    //     }
+    //   ],
+    //
+    //   adress: {
+    //     company: 'Shotover',
+    //     city: 'Christchurch',
+    //     country: 'New Zealand'
+    //   }
+    // }
   },
 
   footerConfig: {
@@ -260,13 +260,13 @@ export default {
       { text: 'Introduction', link: '/docs/user-guide/introduction' },
       { text: 'Concepts', link: '/docs/user-guide/concepts' },
       { text: 'Roadmap', link: '/#roadmap' },
-      { text: 'Contacts', link: '/contacts' }
+      // { text: 'Contacts', link: '/contacts' }
     ],
 
-    copyrightMessages: {
-      m1: 'Copyright © Shotover Ltd 2022. All rights reserved.',
-      m2: 'Copyright Shotover Ltd. Authorised by the Prudential Regulation Authority and regulated by the Financial Conduct Authority and the Prudential Regulation Authority (Financial Services Register number: 754568). Registered Address: ClearBank, Borough Yards, 13 Dirty Lane, London, SE1 9PA.',
-      m3: 'Shotover® provides customers with a Definitive Services Agreement, which covers the provision of indirect access services. Code of Conduct for Indirect Access Providers.'
-    }
+    // copyrightMessages: {
+    //   m1: 'Copyright © Shotover Ltd 2022. All rights reserved.',
+    //   m2: 'Copyright Shotover Ltd. Authorised by the Prudential Regulation Authority and regulated by the Financial Conduct Authority and the Prudential Regulation Authority (Financial Services Register number: 754568). Registered Address: ClearBank, Borough Yards, 13 Dirty Lane, London, SE1 9PA.',
+    //   m3: 'Shotover® provides customers with a Definitive Services Agreement, which covers the provision of indirect access services. Code of Conduct for Indirect Access Providers.'
+    // }
   }
 }

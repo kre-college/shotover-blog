@@ -7,9 +7,9 @@
       </a>
 
       <div class="f-left w-100">
-        <p class="copyright">{{ copyrightMessages.m1 }}</p>
-        <p class="copyright mb-1">{{ copyrightMessages.m2 }}</p>
-        <p class="copyright">{{ copyrightMessages.m3 }}</p>
+<!--        <p class="copyright">{{ copyrightMessages.m1 }}</p>-->
+<!--        <p class="copyright mb-1">{{ copyrightMessages.m2 }}</p>-->
+<!--        <p class="copyright">{{ copyrightMessages.m3 }}</p>-->
       </div>
     </div>
 
